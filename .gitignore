@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+data/capture.png
+data/frame.png
+data/ebs.token
+data/relay.token
+data/extension_id
+data/augments/
+extension/
+*.tmp

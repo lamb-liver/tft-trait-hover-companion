@@ -1,0 +1,631 @@
+{
+ "_source": "Augment pick rounds (1 = 2-1, 2 = 3-2, 3 = 4-2). Kept only where two sources agree: Blitz.gg set 18 augment data (tags Augment.RoundVariant.Early/Mid/Late) and CommunityDragon map22.bin (ItemTags {d02ae323}/{d12ae4b6}/{d22ae649} = one prefix + '1'/'2'/'3' = not offered at that pick) on the same augment's TFT_ entry. Built 2026-10-21, patch 16.20.",
+ "rounds": {
+  "DA_18_BigGrabBag": [
+   2,
+   3
+  ],
+  "DA_18_BranchingOut": [
+   1
+  ],
+  "DA_18_BranchingOutPlus": [
+   2
+  ],
+  "DA_18_CaretakersAlly": [
+   1
+  ],
+  "DA_18_DuoQueue": [
+   3
+  ],
+  "DA_18_GoodForSomethingI": [
+   1
+  ],
+  "DA_18_OneTwoFive": [
+   3
+  ],
+  "DA_AdvancedLoan": [
+   1
+  ],
+  "DA_AdvancedLoanPlus": [
+   2
+  ],
+  "DA_ArcaneViktory": [
+   2,
+   3
+  ],
+  "DA_Ascension": [
+   2,
+   3
+  ],
+  "DA_BacklineBlueprint": [
+   1
+  ],
+  "DA_BackupBows": [
+   1
+  ],
+  "DA_BandOfThieves": [
+   1,
+   2,
+   3
+  ],
+  "DA_BandOfThievesII": [
+   1
+  ],
+  "DA_BandOfThievesIIPlus": [
+   2
+  ],
+  "DA_BandOfThievesIIPlusPlus": [
+   3
+  ],
+  "DA_BaronsLair": [
+   2,
+   3
+  ],
+  "DA_BeltOverflow": [
+   2,
+   3
+  ],
+  "DA_BirthdayPresent": [
+   1
+  ],
+  "DA_BirthdayReunion": [
+   1
+  ],
+  "DA_BodyguardTraining": [
+   1
+  ],
+  "DA_BoosterPack": [
+   1
+  ],
+  "DA_BoosterPackPlus": [
+   2
+  ],
+  "DA_BoosterPackPlusPlus": [
+   3
+  ],
+  "DA_BoxingLessons": [
+   2,
+   3
+  ],
+  "DA_BronzeForLifeI": [
+   2,
+   3
+  ],
+  "DA_BronzeForLifeII": [
+   2,
+   3
+  ],
+  "DA_BuildABud": [
+   1
+  ],
+  "DA_CalculatedLoss": [
+   1
+  ],
+  "DA_CallToChaos": [
+   3
+  ],
+  "DA_CalledShot": [
+   1
+  ],
+  "DA_CaretakersFavor": [
+   1
+  ],
+  "DA_CarveAPath": [
+   1
+  ],
+  "DA_ClearMind": [
+   1
+  ],
+  "DA_ClockworkAccelerator": [
+   2,
+   3
+  ],
+  "DA_ClutteredMind": [
+   1
+  ],
+  "DA_CognitiveOverload": [
+   2
+  ],
+  "DA_CognitiveTax": [
+   1
+  ],
+  "DA_CognitiveTaxPlus": [
+   2
+  ],
+  "DA_ComebackStory": [
+   1
+  ],
+  "DA_CommerceCore": [
+   3
+  ],
+  "DA_CookingPot": [
+   1
+  ],
+  "DA_Coronation": [
+   2,
+   3
+  ],
+  "DA_Corrosion": [
+   2,
+   3
+  ],
+  "DA_CraftedCrafting": [
+   1
+  ],
+  "DA_CryMeARiver": [
+   1,
+   2
+  ],
+  "DA_CyberneticImplants_Gold": [
+   2,
+   3
+  ],
+  "DA_CyberneticUplink_Gold": [
+   2,
+   3
+  ],
+  "DA_DeadlierBlades": [
+   1
+  ],
+  "DA_DeadlierCaps": [
+   1
+  ],
+  "DA_Dummify": [
+   2
+  ],
+  "DA_EarlyLearnings": [
+   1
+  ],
+  "DA_ElectrochargeI": [
+   1,
+   2,
+   3
+  ],
+  "DA_ElectrochargeII": [
+   1,
+   2,
+   3
+  ],
+  "DA_EpicRolldown": [
+   2
+  ],
+  "DA_Epoch": [
+   1
+  ],
+  "DA_EpochPlus": [
+   2
+  ],
+  "DA_ExclusiveCustomization": [
+   2,
+   3
+  ],
+  "DA_ExpectedUnexpectedness": [
+   1
+  ],
+  "DA_Expedition": [
+   1
+  ],
+  "DA_ExplosiveGrowth": [
+   2
+  ],
+  "DA_ExplosiveGrowthPlus": [
+   3
+  ],
+  "DA_FeelingLucky": [
+   2
+  ],
+  "DA_FindYourCenter": [
+   2,
+   3
+  ],
+  "DA_Flexible": [
+   1
+  ],
+  "DA_FlowingTears": [
+   1
+  ],
+  "DA_FocusedFire": [
+   2,
+   3
+  ],
+  "DA_ForgedInStrength": [
+   1
+  ],
+  "DA_FrontlineFoundation": [
+   1
+  ],
+  "DA_GainGold": [
+   2
+  ],
+  "DA_GiantAndMighty": [
+   2,
+   3
+  ],
+  "DA_GildedSteel": [
+   3
+  ],
+  "DA_GlassCannon_Gold": [
+   2,
+   3
+  ],
+  "DA_GlassCannon_Silver": [
+   2,
+   3
+  ],
+  "DA_GoingLong": [
+   1
+  ],
+  "DA_GoldDestiny": [
+   1
+  ],
+  "DA_GoldDestinyPlus": [
+   2
+  ],
+  "DA_GoldenEgg": [
+   3
+  ],
+  "DA_GoldenGamble": [
+   1
+  ],
+  "DA_GoldenGamblePlus": [
+   2
+  ],
+  "DA_GoldenGamblePlusPlus": [
+   3
+  ],
+  "DA_GroupHugI": [
+   2,
+   3
+  ],
+  "DA_GroupHugII": [
+   2,
+   3
+  ],
+  "DA_HardBargain": [
+   1
+  ],
+  "DA_HardCommit": [
+   1
+  ],
+  "DA_HealingOrbsI": [
+   2,
+   3
+  ],
+  "DA_HealingOrbsII": [
+   2,
+   3
+  ],
+  "DA_HedgeFund": [
+   1
+  ],
+  "DA_HeroicGrabBag": [
+   1
+  ],
+  "DA_HeroicGrabBagPlus": [
+   2
+  ],
+  "DA_HeroicGrabBagPlusPlus": [
+   3
+  ],
+  "DA_HoldTheLine": [
+   2,
+   3
+  ],
+  "DA_Hustler": [
+   1
+  ],
+  "DA_InvestedPlus": [
+   2
+  ],
+  "DA_InvestedPlusPlus": [
+   3
+  ],
+  "DA_InvestmentStrategy": [
+   1
+  ],
+  "DA_InvestmentStrategyI": [
+   1
+  ],
+  "DA_IronAssets": [
+   1
+  ],
+  "DA_ItemGrabBag": [
+   1,
+   2,
+   3
+  ],
+  "DA_JeweledLotus_I": [
+   2,
+   3
+  ],
+  "DA_JeweledLotus_II": [
+   2,
+   3
+  ],
+  "DA_KickStart": [
+   1
+  ],
+  "DA_Kingslayer": [
+   1,
+   2
+  ],
+  "DA_LateGameScaling": [
+   1
+  ],
+  "DA_LateGameSpecialist": [
+   2
+  ],
+  "DA_LatentForge": [
+   1
+  ],
+  "DA_LegionOfThrees": [
+   1
+  ],
+  "DA_LevelUp": [
+   1
+  ],
+  "DA_LivingForge": [
+   1
+  ],
+  "DA_LuckyGloves": [
+   1
+  ],
+  "DA_LuckyGlovesPlus": [
+   2,
+   3
+  ],
+  "DA_LuxurySubscription": [
+   2
+  ],
+  "DA_MagicRoll": [
+   2
+  ],
+  "DA_MaliciousMonetization": [
+   3
+  ],
+  "DA_MaxBuild": [
+   3
+  ],
+  "DA_Min_Max": [
+   2
+  ],
+  "DA_MissedConnections": [
+   2,
+   3
+  ],
+  "DA_MoneyHungryPlus": [
+   2
+  ],
+  "DA_MoneyHungry_NotBroken": [
+   1
+  ],
+  "DA_MoneyMonsoon": [
+   3
+  ],
+  "DA_NoScoutNoPivot": [
+   1
+  ],
+  "DA_OneBuffTwoBuff": [
+   2,
+   3
+  ],
+  "DA_PandorasBench": [
+   1,
+   2
+  ],
+  "DA_PandorasItemsII": [
+   1,
+   2,
+   3
+  ],
+  "DA_PandorasItemsIII": [
+   1,
+   2
+  ],
+  "DA_PartialAscension": [
+   2,
+   3
+  ],
+  "DA_PatienceIsAVirtue": [
+   1
+  ],
+  "DA_PatientStudy": [
+   1
+  ],
+  "DA_Pilfer": [
+   2
+  ],
+  "DA_PlotArmor": [
+   2,
+   3
+  ],
+  "DA_PortableForge": [
+   1,
+   2,
+   3
+  ],
+  "DA_PrismaticDestiny": [
+   1
+  ],
+  "DA_PrismaticDestinyPlus": [
+   2
+  ],
+  "DA_PrismaticTicket": [
+   1,
+   2
+  ],
+  "DA_PromisedProtection": [
+   1,
+   2
+  ],
+  "DA_RadiantRascal": [
+   2,
+   3
+  ],
+  "DA_RadiantRelic": [
+   1,
+   2,
+   3
+  ],
+  "DA_Recombobulator": [
+   2
+  ],
+  "DA_Replication": [
+   1,
+   2
+  ],
+  "DA_SalvageBin": [
+   1
+  ],
+  "DA_SalvageBinPlus": [
+   2,
+   3
+  ],
+  "DA_SeraphimsStaff": [
+   1,
+   2
+  ],
+  "DA_ShimmerscaleEssence": [
+   1
+  ],
+  "DA_ShoppingSpree": [
+   1
+  ],
+  "DA_SilverDestiny": [
+   1
+  ],
+  "DA_SilverDestinyPlus": [
+   2
+  ],
+  "DA_SilverDestinyPlusPlus": [
+   3
+  ],
+  "DA_SilverSpoon": [
+   1
+  ],
+  "DA_Slammin": [
+   1
+  ],
+  "DA_SlamminPlus": [
+   2
+  ],
+  "DA_SliceOfLife": [
+   1
+  ],
+  "DA_SlightlyMagicRoll": [
+   1
+  ],
+  "DA_SmallGrabBag": [
+   2,
+   3
+  ],
+  "DA_SoloLeveling": [
+   1
+  ],
+  "DA_SoloPlate": [
+   1,
+   2
+  ],
+  "DA_SoulAwakening": [
+   2,
+   3
+  ],
+  "DA_SpeedyDoubleKill": [
+   1
+  ],
+  "DA_SpiritOfRedemption": [
+   1,
+   2
+  ],
+  "DA_SpreadingRoots": [
+   1
+  ],
+  "DA_SpreadingRootsPlus": [
+   2
+  ],
+  "DA_Staffsmith": [
+   3
+  ],
+  "DA_StandUnited": [
+   2,
+   3
+  ],
+  "DA_SweetTreats": [
+   2,
+   3
+  ],
+  "DA_SwordOverflow": [
+   2,
+   3
+  ],
+  "DA_Swordsmith": [
+   3
+  ],
+  "DA_TacticiansKitchen": [
+   1
+  ],
+  "DA_TeamBuilding": [
+   1,
+   2
+  ],
+  "DA_TheTower": [
+   1,
+   2,
+   3
+  ],
+  "DA_TheTraitTree": [
+   1
+  ],
+  "DA_TheTraitTreePlus": [
+   2
+  ],
+  "DA_TimeSkip": [
+   1
+  ],
+  "DA_TonsOfStatsI": [
+   2,
+   3
+  ],
+  "DA_TonsOfStatsII": [
+   2,
+   3
+  ],
+  "DA_TradeSector": [
+   1
+  ],
+  "DA_TradeSectorPlus": [
+   2
+  ],
+  "DA_TwinGuardians": [
+   2,
+   3
+  ],
+  "DA_URF": [
+   1,
+   2,
+   3
+  ],
+  "DA_WandOverflow": [
+   2,
+   3
+  ],
+  "DA_Warpath": [
+   1
+  ],
+  "DA_WeStickTogether": [
+   1
+  ],
+  "DA_WorththeWait": [
+   1
+  ],
+  "DA_WorththeWaitII": [
+   1
+  ],
+  "DA_WovenMagic": [
+   1
+  ],
+  "DA_YoungAndWildAndFree": [
+   1
+  ]
+ }
+}
