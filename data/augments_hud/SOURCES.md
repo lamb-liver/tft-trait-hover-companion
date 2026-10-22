@@ -24,3 +24,18 @@ How each icon was identified and cut:
 | DA_TraitLadder | Trait Ladder | YouTube kCcMM-kD5o4 @ ~0:20 | calibrated on known cards |
 | DA_VerticalityI | Verticality I (OCR "Verticality !", read by eye) | data/real field7/xsweet_poison/s-172925.png | calibrated on known cards |
 | DA_VerticalityIII | Verticality III | YouTube kCcMM-kD5o4 @ ~9:18 | calibrated on known cards |
+| DA_18_CovenTraitAugment_LootToAP | Dark Ritual | Twitch VOD 2903227406 @ 97:30 | calibrated on known cards |
+| DA_18_FaeTraitAugment | Embiggen | Twitch VOD 2907595335 @ 213:15 | calibrated on known cards |
+| DA_18_ResidualMagicPlusPlus | Residual Magic ++ | Twitch VOD 2906626322 @ 244:45 | calibrated on known cards |
+| DA_BlackthornTraitAugment | ItemE Extraction (read by eye: Item Extraction) | Twitch VOD 2903227406 @ 46:45 | calibrated on known cards |
+| DA_ChampDelivery | Champ Delivery | Twitch VOD 2907053247 @ 89:45 | calibrated on known cards |
+| DA_ChampDeliveryPlus | Champ Delivery+ | Twitch VOD 2907487096 @ 130:45 | calibrated on known cards |
+| DA_ComponentQuest | Component Quest | Twitch VOD 2907487096 @ 82:15 | calibrated on known cards |
+| DA_FutureFocused | Future Focused | Twitch VOD 2907854923 @ 10:00 | calibrated on known cards |
+| DA_NestingAnvils | Nesting Anvils | Twitch VOD 2907487096 @ 429:45 | calibrated on known cards |
+| DA_NestingAnvilsPlus | Nesting Anvils+ | Twitch VOD 2907487096 @ 231:00 | calibrated on known cards |
+| DA_VerticalityII | Verticality II | Twitch VOD 2907595335 @ 105:15 | default card geometry |
+
+DA_18_RiftbeastTraitAugment (bar crop above) was later confirmed by an OCR'd card titled "Omega Riftbeast" (Twitch VOD 2906626322 @ 8:45) showing the same glyph.
+
+Champ Delivery and Champ Delivery+ share the same card art, as do Nesting Anvils and Nesting Anvils+. The card titles and the art from separate cards were compared by eye. Each pair uses one file (the "+" card's crop), so the two ids form a same-icon group and the tier is not guessed.
