@@ -1355,8 +1355,18 @@ def iou(a, b):
     return inter / area
 
 
+# Some augments ship a placeholder icon in CDragon (hexcore/missing-t1/t2: a plain "T";
+# 2026-10-23 every set-18 trait augment) while the HUD draws real art, so they never
+# matched. data/augments_hud holds that art cut from real frames and wins over the
+# CDragon icon, as data/icons_hud does for traits. fetch does not touch it.
+AUGMENTS_HUD = DATA / "augments_hud"
+
+
 def load_bgr(augment_id):
-    return cv2.imread(str(DATA / "augments" / f"{augment_id}.png"), cv2.IMREAD_COLOR)
+    path = AUGMENTS_HUD / f"{augment_id}.png"
+    if not path.is_file():
+        path = DATA / "augments" / f"{augment_id}.png"
+    return cv2.imread(str(path), cv2.IMREAD_COLOR)
 
 
 # Many augments share one icon (tiers I/II/III, Plus, the same augment from an
