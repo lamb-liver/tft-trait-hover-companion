@@ -1355,10 +1355,13 @@ def iou(a, b):
     return inter / area
 
 
-# Some augments ship a placeholder icon in CDragon (hexcore/missing-t1/t2: a plain "T";
-# 2026-10-23 every set-18 trait augment) while the HUD draws real art, so they never
-# matched. data/augments_hud holds that art cut from real frames and wins over the
-# CDragon icon, as data/icons_hud does for traits. fetch does not touch it.
+# data/augments_hud holds augment art cut from real frames; it wins over the CDragon icon, as
+# data/icons_hud does for traits. fetch does not touch it. Two cases, 2026-10-23:
+# - CDragon only has a placeholder (hexcore/missing-t*: a plain "T"; every set-18 trait
+#   augment), e.g. DA_18_RiftbeastTraitAugment.
+# - The selected bar draws the icon darker than CDragon's art, e.g. DA_JeweledLotus_I scored
+#   0.63 against the 0.80 bar gate. The bar crop was first mislabelled as Blossom; a scan of
+#   CDragon's raw hexcore icons showed it is jeweled-lotus (0.86).
 AUGMENTS_HUD = DATA / "augments_hud"
 
 
