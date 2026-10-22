@@ -17,7 +17,7 @@ git clone https://github.com/lamb-liver/tft-trait-hover-companion.git
 cd tft-trait-hover-companion
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python companion.py fetch     # 下載羈絆／海克斯圖示與目錄，幾分鐘，最後印「fetch 完成」
+.venv/bin/python companion.py fetch     # 第一次啟動前必跑：下載羈絆／海克斯圖示與目錄，幾分鐘，最後印「fetch 完成」
 .venv/bin/python ebs.py --extension-id <商店 ID>
 ```
 

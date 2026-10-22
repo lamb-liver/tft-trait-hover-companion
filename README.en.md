@@ -17,7 +17,7 @@ git clone https://github.com/lamb-liver/tft-trait-hover-companion.git
 cd tft-trait-hover-companion
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python companion.py fetch     # downloads trait/augment icons and catalog; a few minutes
+.venv/bin/python companion.py fetch     # required before first start: downloads trait/augment icons and catalog; a few minutes
 .venv/bin/python ebs.py --extension-id <store ID>
 ```
 

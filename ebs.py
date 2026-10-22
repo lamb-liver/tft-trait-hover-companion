@@ -534,6 +534,11 @@ def main():
     origin = pinned_origin(extension_id, origin)
     if not origin:
         print("注意：沒有鎖定插件 ID，任何插件都能送畫面。上架版請加 --extension-id <id>。", flush=True)
+    missing = [p for p in (ROOT / "viewer" / "catalog.json", DATA / "set.json") if not p.is_file()]
+    if missing or not any((DATA / "augments").glob("*.png")):
+        print("找不到圖示目錄。請先執行一次：python companion.py fetch（Windows：.venv\\Scripts\\python companion.py fetch）", flush=True)
+        print("Catalog missing. Run once first: python companion.py fetch", flush=True)
+        sys.exit(1)
     httpd = serve(origin=origin)
     templates()
     port = httpd.server_address[1]

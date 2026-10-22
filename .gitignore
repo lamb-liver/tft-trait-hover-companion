@@ -9,3 +9,5 @@ data/extension_id
 data/augments/
 extension/
 *.tmp
+data/set.json
+viewer/catalog.json
