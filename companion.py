@@ -1164,12 +1164,64 @@ def match_slots(frame, templates):
     # by side. Results are gathered in region order: same output as the loop.
     hits = []
     cards = []
+    bar = []
     for crop, scales, shortlist, found in _SLOT_POOL.map(one, regions):
         hits.extend(found)
         if scales is CARD_SCALES:
             cards.extend((hit, crop, shortlist) for hit in found)
+        else:
+            bar = found
     narrow_by_round(cards)
+    narrow_bar(bar)
     return hits
+
+
+# Selected bar: one icon per pick so far, left to right = 2-1, 3-2, 4-2. Silver/Gold/
+# Prismatic Destiny grants one more augment of its own tier, drawn in the slot right
+# after it (702 frames: all 10 Destiny bars with a hit next to Destiny, the neighbour
+# has the Destiny's tier). The bar is centred: icon lefts 38 px apart around x 492
+# (505 on the shifted layout). A gap, other spacing or an off-centre run means a slot
+# was not read, so the bar is not used. Mirrors tools/ocvjs/ocv_pool.js barPicks.
+BAR_PITCH, BAR_PITCH_TOL = 38, 5
+BAR_CENTERS, BAR_CENTER_TOL = (492, 505), 4
+DESTINY = re.compile(r"^DA_(Silver|Gold|Prismatic)Destiny(Plus)*$")
+
+
+def bar_picks(bar):
+    if not bar:
+        return None
+    order = sorted(bar, key=lambda h: h["x"])
+    xs = [h["x"] * 1920 for h in order]
+    if any(abs(b - a - BAR_PITCH) > BAR_PITCH_TOL for a, b in zip(xs, xs[1:])):
+        return None
+    mid = sum(xs) / len(xs)
+    if not any(abs(mid - c) <= BAR_CENTER_TOL for c in BAR_CENTERS):
+        return None
+    picks, i = [], 0
+    while i < len(order):
+        picks.append(order[i])
+        if DESTINY.match(order[i]["id"]):
+            if i + 1 >= len(order):
+                return None
+            i += 1
+        i += 1
+    # Only a full bar is unambiguous: 3 picks, plus the granted slot when a Destiny is
+    # there. A shorter run can be a wider bar with end slots unread (imaqtpie: a 4-slot
+    # Destiny bar whose first slot lies left of the crop read as 2 slots).
+    return picks if len(picks) == 3 and len(order) - len(picks) <= 1 else None
+
+
+def narrow_bar(bar):
+    rounds, groups = augment_rounds()
+    picks = bar_picks(bar) if rounds else None
+    for k, hit in enumerate(picks or [], start=1):
+        members = groups.get(hit["id"]) or []
+        if len(members) < 2 or any(m not in rounds for m in members):
+            continue
+        offered = [m for m in members if k in rounds[m]]
+        if len(offered) == 1:
+            hit["id"] = offered[0]
+            hit["exact"] = True
 
 
 # Near tie between two icon families (I vs II, silver vs prismatic): same shape,
@@ -1379,6 +1431,16 @@ def load_bgr(augment_id):
 # More than MAX_SAME_ICON candidates is not an answer; that icon stays silent.
 MAX_SAME_ICON = 4
 
+# CDragon's hexcore/missing-t1/t2/t3 placeholders (a plain "T"), by the sha1 of the
+# decoded BGR image. The game never draws them, so they are never templates. Without
+# this, a placeholder family shrinks as real HUD art replaces its members and turns
+# into a live template once it has MAX_SAME_ICON members or fewer.
+PLACEHOLDER_SHA1 = {
+    "6015f80a0fd36024bc44159ca14839b0f775e3bc",
+    "4d3e094d99d3e8b1cdb210078f1239b48069643b",
+    "17d808b6252dbfae8b36c90ef9fc4fcd83794230",
+}
+
 
 def _augment_images():
     import hashlib
@@ -1395,6 +1457,8 @@ def _augment_images():
         if int(gray.max()) - int(gray.min()) < 8:
             continue
         key = hashlib.sha1(image.tobytes()).hexdigest()
+        if key in PLACEHOLDER_SHA1:
+            continue
         groups.setdefault(key, (image, []))[1].append(augment_id)
     return groups
 
