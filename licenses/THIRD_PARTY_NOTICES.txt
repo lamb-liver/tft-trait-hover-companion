@@ -1,0 +1,14 @@
+Third-party notices — TFT羈絆提示 (TFT Trait Hover)
+
+1. OpenCV 4.13 (matcher/opencv.js, slim WebAssembly build)
+   Licensed under the Apache License, Version 2.0: see opencv-LICENSE.txt and opencv-COPYRIGHT.txt.
+   Modification: built with a reduced module set and DYNAMIC_EXECUTION=0 (no eval / new Function).
+
+2. Emscripten runtime (JavaScript glue code inside matcher/opencv.js)
+   Licensed under the MIT license / University of Illinois/NCSA Open Source License: see emscripten-LICENSE.txt.
+
+3. Riot Games content (catalog.json text, trait and augment icons in matcher/icons and matcher/bundle.json)
+   Not covered by any open-source license in this package. Riot Games, Teamfight Tactics and all associated
+   properties are trademarks or registered trademarks of Riot Games, Inc.
+   TFT Trait Hover isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or
+   anyone officially involved in producing or managing Riot Games properties.
