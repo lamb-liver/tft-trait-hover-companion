@@ -500,7 +500,7 @@ def publish_traits():
 
 def serve(host="127.0.0.1", port=8766, token=None, origin=""):
     if host not in LOOPBACK:
-        raise SystemExit("廣播只聽 127.0.0.1。遠端走 Twitch，不連主播機器。")
+        raise SystemExit("廣播只聽 127.0.0.1。遠端走 Twitch，不連實況主機器。")
     global state, clients
     with lock:
         state = {"type": "update", "t": 0, "boxes": []}
@@ -533,7 +533,7 @@ def main():
         extension_id = sys.argv[sys.argv.index("--extension-id") + 1]
     origin = pinned_origin(extension_id, origin)
     if not origin:
-        print("注意：沒有鎖定插件 ID，任何插件都能送畫面。上架版請加 --extension-id <id>。", flush=True)
+        print("注意：沒有鎖定擴充功能 ID，任何擴充功能都能送畫面。上架版請加 --extension-id <id>。", flush=True)
     missing = [p for p in (ROOT / "viewer" / "catalog.json", DATA / "set.json") if not p.is_file()]
     if missing or not any((DATA / "augments").glob("*.png")):
         print("找不到圖示目錄。請先執行一次：python companion.py fetch（Windows：.venv\\Scripts\\python companion.py fetch）", flush=True)
