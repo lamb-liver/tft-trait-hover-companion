@@ -39,3 +39,13 @@ How each icon was identified and cut:
 DA_18_RiftbeastTraitAugment (bar crop above) was later confirmed by an OCR'd card titled "Omega Riftbeast" (Twitch VOD 2906626322 @ 8:45) showing the same glyph.
 
 Champ Delivery and Champ Delivery+ share the same card art, as do Nesting Anvils and Nesting Anvils+. The card titles and the art from separate cards were compared by eye. Each pair uses one file (the "+" card's crop), so the two ids form a same-icon group and the tier is not guessed.
+
+### Batch 3
+| id | on-screen title | source | cut |
+|---|---|---|---|
+| DA_CapitalGainsII | Capital Gains II | Twitch VOD 2906615325 @ 23:45 | calibrated on known cards |
+| DA_18_ElderwoodTraitAugment | Nature's Shelter | Twitch VOD 2906615325 @ 82:45 | calibrated on known cards |
+| DA_18_FloraFatalisAugment | Consuming Flora | Twitch VOD 2906598662 @ 53:30 | calibrated on known cards |
+| DA_18_PrimalAugment_Nidalee, DA_18_PrimalAugment_Sivir, DA_18_PrimalAugmentPlus_Nidalee, DA_18_PrimalAugmentPlus_Sivir | Beast tWithin+ | Twitch VOD 2907241009 @ 249:00 | calibrated on known cards |
+
+Beast Within and Beast Within+ show the same art: cards titled "Beast Within" (Twitch VOD 2906626322 @ 54:00) and "Beast Within+" were compared by eye. The visible card text cannot tell the Nidalee and Sivir variants apart, so all four ids share one file and form a same-icon group (4 members).
