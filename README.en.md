@@ -1,68 +1,47 @@
-# TFT Trait Hover Companion
+# TFT Trait Hover (TFT羈絆提示)
 
-[繁體中文](README.md) · [Privacy Policy](docs/privacy.md)
+[繁體中文](README.md) · [Install guide](docs/install.md) · [Privacy Policy](docs/privacy.md) · [Changelog](CHANGELOG.md)
 
-The local companion for the TFT Trait Hover Chrome extension. The extension sends frames of the Twitch/YouTube player to `http://127.0.0.1:8766` on your own computer; this program matches trait and augment icons there and returns only a time, icon ids and box positions. Frames never leave your computer. No win rates, average placements, recommendations or opponent tracking.
+While watching Teamfight Tactics on Twitch or YouTube, hover over a trait or augment icon in the player to see its Traditional Chinese name and the public in-game description.
 
-Install the extension itself from the Chrome Web Store (unlisted; via link).
+- Since 0.4.0 it is a pure Chrome extension: **no Python or other program to install**.
+- All matching runs inside your browser. Frames are never uploaded and no data is collected.
+- Shows only in-game names and descriptions. No recommendations, no opponent tracking.
 
-## 1. First-time setup
+## Install
 
-Requires Python 3.9+.
+**Chrome Web Store**: under review. The (unlisted) store link will be added here after approval; it installs in one click and updates automatically.
 
-**Mac** (Terminal):
-```
-python3 --version
-git clone https://github.com/lamb-liver/tft-trait-hover-companion.git
-cd tft-trait-hover-companion
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-.venv/bin/python companion.py fetch     # required before first start: downloads trait/augment icons and catalog; a few minutes
-.venv/bin/python ebs.py --extension-id <store ID>
-```
+**Early testing (load unpacked, desktop Chrome on Mac/Windows)**:
 
-**Windows** (PowerShell; tick "Add python.exe to PATH" when installing Python from python.org):
-```
-py --version
-git clone https://github.com/lamb-liver/tft-trait-hover-companion.git
-cd tft-trait-hover-companion
-py -m venv .venv
-.venv\Scripts\pip install -r requirements.txt
-.venv\Scripts\python companion.py fetch
-.venv\Scripts\python ebs.py --extension-id <store ID>
-```
+1. Download `tft-trait-hover-0.4.1.zip` from [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases).
+2. Unzip it into a permanent folder (don't delete or move it later).
+3. Open `chrome://extensions`.
+4. Turn on **Developer mode** (top right).
+5. Click **Load unpacked** and select the folder that contains `manifest.json`.
 
-Without git, use "Code → Download ZIP" and `cd` into the extracted folder.
+See [docs/install.md](docs/install.md) for details and troubleshooting.
 
-`--extension-id` makes the companion accept only the store extension (ID shown in `chrome://extensions`). You can also set `TFT_EXTENSION_ID` or write the ID to `data/extension_id`.
+## Use
 
-## 2. Every time you watch
+1. Open a Twitch stream or YouTube video of TFT.
+2. Click the toolbar icon or press Alt+Shift+Y (Mac: Option+Shift+Y). The badge shows 「讀」 while reading.
+3. Hover over traits on the left, augment choice cards, or picked augments at the top left. Click again to stop.
 
-1. Run `ebs.py` in this folder and keep the window open.
-2. Open a TFT stream on Twitch or a TFT video on YouTube.
-3. Click the toolbar icon or press Alt+Shift+Y (Mac: Option+Shift+Y); the badge shows "讀".
-4. Hover trait icons, augment choice cards or the picked-augment bar.
+## Known limitations
 
-## 3. After a game patch
+- Mobile TFT layouts are not supported; mobile browsers cannot install extensions.
+- Korean/Japanese stream overlays may hide some traits; the extension prefers showing nothing over guessing.
+- Augment +/++ variants share the same art; the tier is only shown when the picked-augment bar is complete.
 
-Run `git pull`, then `companion.py fetch` again, and restart `ebs.py`.
+## Local program (optional, legacy)
 
-## Troubleshooting
-
-- Badge "?": the companion isn't running or not responding.
-- Badge "!": the tab can't be captured, or the extension and companion versions differ — update both.
-- "讀" but no boxes: enlarge the player or go fullscreen. Lobby/carousel screens show nothing; tiny or blurry players show nothing rather than guess.
-- Shortcut not working: set it at `chrome://extensions/shortcuts`.
-
-## Known limits
-
-- Mobile TFT is not supported.
-- Augments sharing one icon may list several candidates when the round can't be determined.
+The Python programs (`ebs.py`, `companion.py`) were the matcher before 0.4.0 and are no longer needed. See [docs/install.md](docs/install.md#optional-local-program).
 
 ## License
 
-License not chosen yet; no LICENSE file for now.
+Code is released under the [MIT License](LICENSE). Riot Games data, text and icons are not covered. OpenCV (Apache-2.0) and Emscripten licenses bundled in the zip are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-## Disclaimer
+## Legal
 
 TFT Trait Hover isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.

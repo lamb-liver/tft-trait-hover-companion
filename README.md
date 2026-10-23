@@ -1,72 +1,49 @@
-# 雲頂羈絆提示 本機程式（TFT Trait Hover Companion）
+# TFT羈絆提示（TFT Trait Hover）
 
-[English](README.en.md) · [隱私權政策 / Privacy Policy](docs/privacy.md)
+[English](README.en.md) · [安裝說明](docs/install.md) · [隱私權政策](docs/privacy.md) · [更新紀錄](CHANGELOG.md)
 
-Chrome 擴充功能「雲頂羈絆提示」要搭配這個本機程式使用。擴充功能把 Twitch／YouTube 播放器的畫面送到你自己電腦上的 `http://127.0.0.1:8766`，由這裡比對羈絆與海克斯圖示，只回傳時間、圖示編號和框的位置。畫面不會離開你的電腦。不顯示勝率、平均名次或推薦，也不追蹤對手。
+在 Twitch 直播或 YouTube 影片看聯盟戰棋（TFT）時，把滑鼠移到播放器畫面上的羈絆或海克斯強化圖示，就會顯示繁體中文名稱與遊戲內的公開敘述。
 
-擴充功能本身請從 Chrome 線上應用程式商店安裝（不公開項目，透過連結取得）。
+- 0.4.0 起只要安裝 Chrome 擴充功能，**不用另外安裝 Python 或其他程式**。
+- 辨識全部在你的瀏覽器裡執行，畫面不會上傳，也不收集任何資料。
+- 只顯示遊戲內的名稱與敘述，不做推薦、不追蹤對手。
 
-## 1. 第一次安裝
+## 安裝
 
-需要 Python 3.9 以上。
+**Chrome 線上應用程式商店**：目前審核中，通過後會在這裡附上（不公開項目）連結，一鍵安裝並自動更新。
 
-**Mac**（終端機）：
-```
-python3 --version          # 需要 3.9 以上；沒有就裝 https://www.python.org/downloads/
-git clone https://github.com/lamb-liver/tft-trait-hover-companion.git
-cd tft-trait-hover-companion
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-.venv/bin/python companion.py fetch     # 第一次啟動前必跑：下載羈絆／海克斯圖示與目錄，幾分鐘，最後印「fetch 完成」
-.venv/bin/python ebs.py --extension-id <商店 ID>
-```
+**搶先測試（手動載入，Mac／Windows 桌面版 Chrome）**：
 
-**Windows**（PowerShell；從 python.org 安裝 Python 時勾選「Add python.exe to PATH」）：
-```
-py --version
-git clone https://github.com/lamb-liver/tft-trait-hover-companion.git
-cd tft-trait-hover-companion
-py -m venv .venv
-.venv\Scripts\pip install -r requirements.txt
-.venv\Scripts\python companion.py fetch
-.venv\Scripts\python ebs.py --extension-id <商店 ID>
-```
+1. 到 [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases) 下載 `tft-trait-hover-0.4.1.zip`。
+2. 解壓縮到一個固定的資料夾（之後不要刪除或搬移）。
+3. Chrome 網址列輸入 `chrome://extensions`。
+4. 開啟右上角「開發人員模式」。
+5. 按「載入未封裝項目」，選擇解壓縮後含有 `manifest.json` 的那一層資料夾。
 
-沒有 git 時，可以在本頁按「Code → Download ZIP」，解壓縮後 `cd` 進資料夾。
+詳細步驟與疑難排解見 [docs/install.md](docs/install.md)。
 
-`--extension-id` 讓本機程式只接受商店版擴充功能連進來（ID 在 `chrome://extensions`）。也可以設環境變數 `TFT_EXTENSION_ID`，或把 ID 寫進 `data/extension_id`。
+## 使用
 
-## 2. 每次看直播
-
-1. 開終端機，到這個資料夾執行 `ebs.py`（上面最後一行），視窗開著別關。
-2. 打開正在玩 TFT 的 Twitch 直播或 YouTube 影片。
-3. 點工具列的「雲頂羈絆提示」，或按 Alt+Shift+Y（Mac：Option+Shift+Y），角標出現「讀」就開始。
-4. 滑鼠停在左側羈絆、海克斯選擇卡或左上角已選海克斯上，就會出現繁中名稱與公開敘述。再點一次停止。
-
-## 3. 遊戲改版後
-
-```
-git pull
-.venv/bin/python companion.py fetch     # Windows：.venv\Scripts\python companion.py fetch
-```
-然後重開 `ebs.py`。
-
-## 疑難排解
-
-- 角標「?」：本機程式沒開或沒有回應，確認終端機裡 `ebs.py` 還在跑。
-- 角標「!」：拿不到分頁畫面，或擴充功能和本機程式版本不合。回到直播分頁再點一次；仍不行就兩邊都更新到最新版。
-- 有「讀」但沒有框：把播放器放大或全螢幕。大廳、選秀等沒有羈絆欄的畫面本來就不顯示；畫面太小或太模糊時寧可不顯示。
-- 快捷鍵沒反應：到 `chrome://extensions/shortcuts` 設定一次。
+1. 打開正在玩聯盟戰棋的 Twitch 直播或 YouTube 影片。
+2. 點工具列的「TFT羈絆提示」，或按 Alt+Shift+Y（Mac：Option+Shift+Y），角標出現「讀」就開始。
+3. 滑鼠停在左側羈絆、海克斯強化選擇卡，或左上角已選的海克斯強化上，就會出現名稱與敘述。再點一次停止。
 
 ## 已知限制
 
-- 不支援手機版 TFT 的畫面。
-- 名稱相同的海克斯若無法判斷輪次，會同時列出幾個候選。
+- 不支援手機版聯盟戰棋的畫面；手機瀏覽器也無法安裝。
+- 實況畫面上的韓文、日文等疊加圖層可能讓部分羈絆無法辨識，這時寧可不顯示。
+- 海克斯強化的 +／++ 版本圖示相同，只有在已選海克斯強化欄完整時才判斷是哪一版，否則只顯示名稱。
+
+## 本機程式（選用，舊版方式）
+
+`ebs.py`、`companion.py` 等 Python 程式是 0.3 版以前的比對方式，0.4.0 起不再需要。若要使用，在擴充功能設定把來源改成「本機 ebs.py（備用）」，並參考 [docs/install.md](docs/install.md#選用本機程式)。
 
 ## 授權
 
-授權條款尚未決定，目前未附 LICENSE。
+程式碼以 [MIT License](LICENSE) 釋出。Riot Games 的遊戲資料、文字與圖示不在 MIT 授權範圍內。安裝檔內含的 OpenCV（Apache-2.0）與 Emscripten 授權見 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 聲明
 
-雲頂羈絆提示（TFT Trait Hover）未經 Riot Games 認可，不代表 Riot Games 或任何正式參與製作、管理 Riot Games 作品者的觀點或意見。Riot Games 及所有相關作品皆為 Riot Games, Inc. 的商標或註冊商標。
+TFT羈絆提示（TFT Trait Hover）未經 Riot Games 認可，不代表 Riot Games 或任何正式參與製作、管理 Riot Games 作品者的觀點或意見。Riot Games 及所有相關作品皆為 Riot Games, Inc. 的商標或註冊商標。
+
+TFT Trait Hover isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.

@@ -1,6 +1,6 @@
 # 隱私權政策 / Privacy Policy
 
-最後更新：2026-10-23。適用：Chrome 擴充功能「雲頂羈絆提示（TFT Trait Hover）」0.4.0 起的版本，以及選用的本機程式 `ebs.py`。
+最後更新：2026-10-24。適用：Chrome 擴充功能「TFT羈絆提示（TFT Trait Hover）」0.4.0 起的版本（0.4.1 起名稱為 TFT羈絆提示），以及選用的本機程式 `ebs.py`。
 
 ## 繁體中文
 
@@ -11,12 +11,12 @@
 - **選用的本機程式**：只有在設定裡把來源改成「本機 ebs.py（備用）」時，畫面才會送到你自己電腦上的 `http://127.0.0.1:8766`（本機回送位址，不經網路），同樣在記憶體比對後丟掉。
 - **分頁聲音**：Chrome 擷取分頁時會把分頁靜音，擴充功能只在本機把聲音播回來，不錄音、不傳送。
 - **設定**：來源、延遲、頻道名稱、中繼網址存在 `chrome.storage.local`，只在你的瀏覽器裡。
-- **主播中繼（選用，預設關閉）**：選了「主播中繼」時，擴充功能會連到你填的 WebSocket 網址（預設為作者架設的中繼），只**接收**主播送出的圖示編號與框，不送出你的畫面或瀏覽紀錄。中繼伺服器連線時會看到你的 IP 位址；中繼程式不記錄它，但中繼架在 Cloudflare Workers 上，Cloudflare 可能依其[隱私權政策](https://www.cloudflare.com/privacypolicy/)處理連線紀錄。
+- **實況主中繼（選用，預設關閉）**：選了「實況主中繼」時，擴充功能會連到你填的 WebSocket 網址（預設為作者架設的中繼），只**接收**實況主送出的圖示編號與框，不送出你的畫面或瀏覽紀錄。中繼伺服器連線時會看到你的 IP 位址；中繼程式不記錄它，但中繼架在 Cloudflare Workers 上，Cloudflare 可能依其[隱私權政策](https://www.cloudflare.com/privacypolicy/)處理連線紀錄。
 
 ### 不會做的事
 - 不收集姓名、帳號、Email、瀏覽紀錄、Cookie 或任何可識別個人的資料。
 - 不使用分析工具、不放廣告、不出售或分享資料給第三方。
-- 不顯示勝率、平均名次、推薦或對手資訊。
+- 只顯示遊戲內的名稱與公開敘述，不做推薦、不追蹤對手。
 
 ### 資料使用聲明
 擴充功能取得的資料只用於單一用途（在播放器上顯示羈絆與海克斯的名稱與公開敘述），並遵守 Chrome Web Store 使用者資料政策，包括「有限使用」（Limited Use）規定。
@@ -38,7 +38,7 @@ https://github.com/lamb-liver/tft-trait-hover-companion/issues
 ### What we do not do
 - No names, accounts, e-mail, browsing history, cookies or other personally identifiable data.
 - No analytics, no ads, no sale or sharing of data with third parties.
-- No win rates, average placements, recommendations or opponent information.
+- Only in-game names and public descriptions; no recommendations or opponent tracking.
 
 ### Limited Use
 The use of information received by this extension is limited to the single purpose above (showing trait and augment names and public descriptions on the player) and adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.
