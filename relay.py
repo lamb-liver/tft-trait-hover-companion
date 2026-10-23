@@ -206,7 +206,7 @@ class Server(ThreadingHTTPServer):
 
 def serve(host="127.0.0.1", port=8765, token=None, heartbeat=5.0):
     if host not in ("127.0.0.1", "::1", "localhost"):
-        raise SystemExit("本機除錯只聽 127.0.0.1。遠端走 Twitch，不連主播機器。")
+        raise SystemExit("本機除錯只聽 127.0.0.1。遠端走 Twitch，不連實況主機器。")
     if token is None:
         token = secrets.token_urlsafe(16)
     Handler.token = token
