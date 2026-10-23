@@ -1379,6 +1379,16 @@ def load_bgr(augment_id):
 # More than MAX_SAME_ICON candidates is not an answer; that icon stays silent.
 MAX_SAME_ICON = 4
 
+# CDragon's hexcore/missing-t1/t2/t3 placeholders (a plain "T"), by the sha1 of the
+# decoded BGR image. The game never draws them, so they are never templates. Without
+# this, a placeholder family shrinks as real HUD art replaces its members and turns
+# into a live template once it has MAX_SAME_ICON members or fewer.
+PLACEHOLDER_SHA1 = {
+    "6015f80a0fd36024bc44159ca14839b0f775e3bc",
+    "4d3e094d99d3e8b1cdb210078f1239b48069643b",
+    "17d808b6252dbfae8b36c90ef9fc4fcd83794230",
+}
+
 
 def _augment_images():
     import hashlib
@@ -1395,6 +1405,8 @@ def _augment_images():
         if int(gray.max()) - int(gray.min()) < 8:
             continue
         key = hashlib.sha1(image.tobytes()).hexdigest()
+        if key in PLACEHOLDER_SHA1:
+            continue
         groups.setdefault(key, (image, []))[1].append(augment_id)
     return groups
 
