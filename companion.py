@@ -1164,12 +1164,64 @@ def match_slots(frame, templates):
     # by side. Results are gathered in region order: same output as the loop.
     hits = []
     cards = []
+    bar = []
     for crop, scales, shortlist, found in _SLOT_POOL.map(one, regions):
         hits.extend(found)
         if scales is CARD_SCALES:
             cards.extend((hit, crop, shortlist) for hit in found)
+        else:
+            bar = found
     narrow_by_round(cards)
+    narrow_bar(bar)
     return hits
+
+
+# Selected bar: one icon per pick so far, left to right = 2-1, 3-2, 4-2. Silver/Gold/
+# Prismatic Destiny grants one more augment of its own tier, drawn in the slot right
+# after it (702 frames: all 10 Destiny bars with a hit next to Destiny, the neighbour
+# has the Destiny's tier). The bar is centred: icon lefts 38 px apart around x 492
+# (505 on the shifted layout). A gap, other spacing or an off-centre run means a slot
+# was not read, so the bar is not used. Mirrors tools/ocvjs/ocv_pool.js barPicks.
+BAR_PITCH, BAR_PITCH_TOL = 38, 5
+BAR_CENTERS, BAR_CENTER_TOL = (492, 505), 4
+DESTINY = re.compile(r"^DA_(Silver|Gold|Prismatic)Destiny(Plus)*$")
+
+
+def bar_picks(bar):
+    if not bar:
+        return None
+    order = sorted(bar, key=lambda h: h["x"])
+    xs = [h["x"] * 1920 for h in order]
+    if any(abs(b - a - BAR_PITCH) > BAR_PITCH_TOL for a, b in zip(xs, xs[1:])):
+        return None
+    mid = sum(xs) / len(xs)
+    if not any(abs(mid - c) <= BAR_CENTER_TOL for c in BAR_CENTERS):
+        return None
+    picks, i = [], 0
+    while i < len(order):
+        picks.append(order[i])
+        if DESTINY.match(order[i]["id"]):
+            if i + 1 >= len(order):
+                return None
+            i += 1
+        i += 1
+    # Only a full bar is unambiguous: 3 picks, plus the granted slot when a Destiny is
+    # there. A shorter run can be a wider bar with end slots unread (imaqtpie: a 4-slot
+    # Destiny bar whose first slot lies left of the crop read as 2 slots).
+    return picks if len(picks) == 3 and len(order) - len(picks) <= 1 else None
+
+
+def narrow_bar(bar):
+    rounds, groups = augment_rounds()
+    picks = bar_picks(bar) if rounds else None
+    for k, hit in enumerate(picks or [], start=1):
+        members = groups.get(hit["id"]) or []
+        if len(members) < 2 or any(m not in rounds for m in members):
+            continue
+        offered = [m for m in members if k in rounds[m]]
+        if len(offered) == 1:
+            hit["id"] = offered[0]
+            hit["exact"] = True
 
 
 # Near tie between two icon families (I vs II, silver vs prismatic): same shape,
