@@ -49,3 +49,20 @@ Champ Delivery and Champ Delivery+ share the same card art, as do Nesting Anvils
 | DA_18_PrimalAugment_Nidalee, DA_18_PrimalAugment_Sivir, DA_18_PrimalAugmentPlus_Nidalee, DA_18_PrimalAugmentPlus_Sivir | Beast tWithin+ | Twitch VOD 2907241009 @ 249:00 | calibrated on known cards |
 
 Beast Within and Beast Within+ show the same art: cards titled "Beast Within" (Twitch VOD 2906626322 @ 54:00) and "Beast Within+" were compared by eye. The visible card text cannot tell the Nidalee and Sivir variants apart, so all four ids share one file and form a same-icon group (4 members).
+
+### Batch 4
+| id | on-screen title | source | cut |
+|---|---|---|---|
+| DA_18_SolarTraitAugment | 太阳的抉择 (zh-CN client; the CDragon zh_cn name for this id), read by eye | Bilibili BV1mdYj6CExx cover (author 绣汐), 273×228 thumbnail | Located with the trait-augment hex frame (Fae HUD icon, 0.76), 40 px, upscaled to 128 with INTER_CUBIC |
+
+Checks for the zh-CN source:
+- In a full frame from the same author (2-1 choice screen), the zh-CN card art for 资本利得 II matches the Twitch DA_CapitalGainsII crop at 0.948, so the CN client draws the same art.
+- Reducing that Capital Gains II card to the same 37 px and upscaling it still scores 0.96 to 0.975 against the good crop at bar and card sizes, so the low-resolution cut is usable.
+| DA_18_WispRebatePlus | 仙灵报恩. CDragon zh_cn has 仙灵报恩 = WispRebatePlus (StartingGold 4) and 仙灵报恩+ = PlusPlus (8). The card text reads 立刻获得4金币, which identifies this one as Plus | Bilibili BV1RW8y68EVr cover, 2560×1440, large card with name and description | 190 px card icon reduced to 128 with INTER_AREA. It matches the same augment's icon in the HUD owned-augments list of the same frame at 0.931. The 是我，宝贝! icon in that list matches DA_ItsMeBaby at 0.961 (style calibration) |
+| DA_18_ResidualMagic | 残留魔力 (no "+", which is the base id) | Bilibili BV1pzYV6ZE76 cover, 1920×1080, real card crop | The card art matches the accepted DA_18_ResidualMagicPlusPlus at 0.959 (same art), so this uses the same file as ++ and forms a sameIcon group |
+
+Rejected in batch 4:
+- 创世神 (LuxII), BV1LT8w63Ezw: the named card is covered by the cover's title text (it scores only 0.66 against the clean icon in BV1MEh663EP2). The clean icon in BV1MEh663EP2 has no on-screen name, so it cannot be used either.
+- 等待得值, BV1Dg8u6HEmy: the name is a cover title, not card text, and the icon has been redrawn into a round badge.
+- 意外之礼, BV1v7p76PEMj: no card name, and the tier (Plus or not) cannot be proven.
+| DA_18_WispRebatePlusPlus | "Wisp Rebate +" (EN). CDragon EN has Wisp Rebate+ = PlusPlus. Card in 702 frame field5/yt_cammy1440a/t857 | Same art as WispRebatePlus: that card's icon scores 0.863 against the Plus crop (the card is dimmed). Uses the same file as Plus and forms a sameIcon group | In the hud4 702 run this frame was detected as WispRebatePlus; the group fixes the tier ambiguity |
