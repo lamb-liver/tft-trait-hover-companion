@@ -14,7 +14,7 @@ While watching Teamfight Tactics on Twitch or YouTube, hover over a trait or aug
 
 **Early testing (load unpacked, desktop Chrome on Mac/Windows)**:
 
-1. Download `tft-trait-hover-0.4.1.zip` from [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases).
+1. Download `tft-trait-hover-0.4.2.zip` from [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases).
 2. Unzip it into a permanent folder (don't delete or move it later).
 3. Open `chrome://extensions`.
 4. Turn on **Developer mode** (top right).
@@ -27,6 +27,12 @@ See [docs/install.md](docs/install.md) for details and troubleshooting.
 1. Open a Twitch stream or YouTube video of TFT.
 2. Click the toolbar icon or press Alt+Shift+Y (Mac: Option+Shift+Y). The badge shows 「讀」 while reading.
 3. Hover over traits on the left, augment choice cards, or picked augments at the top left. Click again to stop.
+
+## Extras
+
+- **Power-saving mode** (extension settings): at least 3 s between scans, pauses 20 s after the pointer leaves the player. Even without it, scanning pauses when the tab is hidden, the video is paused or the pointer has been away for a minute.
+- **Report wrong result** (button at the top right of the player while reading): saves the frame and results as a file in your Downloads folder; nothing is uploaded. Attach it to an [issue](https://github.com/lamb-liver/tft-trait-hover-companion/issues) if you want to report it.
+- **Tier unknown**: augment +/++ tiers share an icon; when the tier can't be determined the tooltip says so and lists every tier.
 
 ## Known limitations
 
