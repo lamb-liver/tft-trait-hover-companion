@@ -1,6 +1,6 @@
 # 隱私權政策 / Privacy Policy
 
-最後更新：2026-10-24。適用：Chrome 擴充功能「TFT羈絆提示（TFT Trait Hover）」0.4.0 起的版本（0.4.1 起名稱為 TFT羈絆提示），以及選用的本機程式 `ebs.py`。
+最後更新：2026-10-25。適用：Chrome 擴充功能「TFT羈絆提示（TFT Trait Hover）」0.4.0 起的版本（0.4.1 起名稱為 TFT羈絆提示），以及選用的本機程式 `ebs.py`。
 
 ## 繁體中文
 
@@ -10,6 +10,7 @@
 - **分頁畫面**：只有在你按下工具列圖示（或快捷鍵）後，擴充功能才會用 Chrome 的 `tabCapture` 擷取「目前這個」Twitch 或 YouTube 分頁的畫面。預設在擴充功能內部（瀏覽器裡的 WebAssembly）比對，每一幀在記憶體裡比對完就丟掉，不寫入硬碟，也不送到任何伺服器。比對結果只有圖示編號和框的位置。
 - **選用的本機程式**：只有在設定裡把來源改成「本機 ebs.py（備用）」時，畫面才會送到你自己電腦上的 `http://127.0.0.1:8766`（本機回送位址，不經網路），同樣在記憶體比對後丟掉。
 - **分頁聲音**：Chrome 擷取分頁時會把分頁靜音，擴充功能只在本機把聲音播回來，不錄音、不傳送。
+- **回報辨識錯誤（選用）**：只有在你按下播放器右上角的「回報辨識錯誤」時，擴充功能才會把當下的播放器畫面、辨識結果與版本號存成一個檔案到你的下載資料夾。這個檔案不會自動上傳，也不會傳到任何伺服器；要不要分享給作者由你決定。
 - **設定**：來源、延遲、頻道名稱、中繼網址存在 `chrome.storage.local`，只在你的瀏覽器裡。
 - **實況主中繼（選用，預設關閉）**：選了「實況主中繼」時，擴充功能會連到你填的 WebSocket 網址（預設為作者架設的中繼），只**接收**實況主送出的圖示編號與框，不送出你的畫面或瀏覽紀錄。中繼伺服器連線時會看到你的 IP 位址；中繼程式不記錄它，但中繼架在 Cloudflare Workers 上，Cloudflare 可能依其[隱私權政策](https://www.cloudflare.com/privacypolicy/)處理連線紀錄。
 
@@ -32,6 +33,7 @@ https://github.com/lamb-liver/tft-trait-hover-companion/issues
 - **Tab frames**: only after you click the toolbar icon (or press the shortcut) does the extension use Chrome `tabCapture` on the current Twitch or YouTube tab. By default each frame is matched inside the extension (WebAssembly in your browser), in memory, and discarded. Nothing is written to disk or sent to any server. The result is only icon ids and box positions.
 - **Optional local program**: only if you switch the source to "local ebs.py (fallback)" are frames sent to `http://127.0.0.1:8766` on your own computer (loopback, never the network), where they are matched in memory and discarded.
 - **Tab audio**: Chrome mutes a captured tab; the extension plays it back locally. It is not recorded or sent.
+- **Report a wrong result (optional)**: only when you click "回報辨識錯誤" on the player does the extension save the current player frame, the detected results and the version as a file in your Downloads folder. The file is never uploaded or sent anywhere; sharing it is up to you.
 - **Settings**: source, delay, channel name and relay URL stay in `chrome.storage.local` in your browser.
 - **Streamer relay (optional, off by default)**: if you choose the relay source, the extension connects to the WebSocket URL you set (by default a relay run by the author) and only **receives** icon ids and boxes sent by the streamer. It never sends your frames or browsing history. The relay sees your IP address when you connect; the relay code does not log it, but it runs on Cloudflare Workers, and Cloudflare may process connection logs under its [privacy policy](https://www.cloudflare.com/privacypolicy/).
 
