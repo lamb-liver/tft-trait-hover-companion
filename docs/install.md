@@ -58,4 +58,4 @@ Notes: don't move or delete the folder; unpacked installs don't auto-update (rep
 Not needed since 0.4.0. Requires Python 3.9+: create a venv, `pip install -r requirements.txt`, run `companion.py fetch`, then `ebs.py --extension-id <ID>`, and switch the source to "local ebs.py (fallback)" in the extension settings.
 
 ---
-作者：羊肝（[lab.lambliver.dev](https://lab.lambliver.dev)）。問題回報：[Issues](https://github.com/lamb-liver/tft-trait-hover-companion/issues)
+作者：羊肝（[lambliver.dev](https://lambliver.dev)）。問題回報：[Issues](https://github.com/lamb-liver/tft-trait-hover-companion/issues)

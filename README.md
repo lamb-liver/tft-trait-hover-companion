@@ -4,7 +4,7 @@
 
 看聯盟戰棋（TFT）實況時，常常忘記羈絆和海克斯強化的效果嗎？在 Twitch 直播或 YouTube 影片上，把滑鼠移到播放器畫面的羈絆或海克斯強化圖示，就會顯示繁體中文名稱與遊戲內的效果說明。
 
-作者：羊肝（[lab.lambliver.dev](https://lab.lambliver.dev)）
+作者：羊肝（[lambliver.dev](https://lambliver.dev)）
 
 - 0.4.0 起只要安裝 Chrome 擴充功能，**不用另外安裝 Python 或其他程式**。
 - 辨識全部在你的瀏覽器裡執行，畫面不會上傳，也不收集任何資料。
