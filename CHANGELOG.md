@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.3 — 2026-10-25
+- 羈絆欄：圖示畫得比清單中位數大的徽章（1 個單位就啟動的獨特羈絆、部分金色徽章、介面縮放較大的實況）不再漏認：羈絆比對多一個 56 px 尺寸；空列多試大 8／12 px；清單頂端或底端連續多列沒認到時，逐列往外找（最多 4 列）。門檻仍為 0.72。/ Trait list: badges whose glyph is drawn larger than the list median (1-unit unique traits, some gold badges, larger HUD scale) are no longer missed: one more trait scale (56 px), empty rows also try +8/+12 px, and the edge search walks outward row by row (up to 4). Threshold unchanged (0.72).
+- 海克斯強化：「開局新手包」(Build A Bud) 改用遊戲實際畫的鐵砧圖示（CDragon 15.20 buildabud_iii），不再誤認為「活火爐」。/ Build A Bud uses the anvil art the game draws (CDragon 15.20 buildabud_iii); no longer read as Living Forge.
+- 速度：56 px 只在基本尺寸看到部分清單（1–2 個徽章，或徽章在 48／64 px）時才補找，且只在清單真的含 56 px 徽章時沿用；海克斯強化卡位在 1/4 縮圖最高分低於 0.60 時直接跳過。/ Speed: 56 px is searched only when the base scales see part of a list, and kept only when the list uses it; augment card regions whose 1/4-scale best score is below 0.60 are skipped.
+- 海克斯強化資料：移除 196 個 S18 已改用 DA_ 新版的舊版 ID：190 個和 CDragon 16.21 TFTSet18 裡的 DA_ 同英文名稱，6 個的 DA_ 新版見於 tactics.tools S18 資料。/ Augments: dropped 196 legacy IDs replaced by DA_ augments in Set 18 (190 by name in CDragon 16.21, 6 per tactics.tools S18 data).
+- 設定頁加上作者與問題回報連結；隱私權政策連結改指向公開的 companion repo。/ Options page: author and issue links; privacy link points to the public companion repo.
+
 ## 0.4.2 — 2026-10-25
 - 省電：分頁在背景、影片暫停、滑鼠離開播放器一段時間時暫停比對；羈絆欄與海克斯強化區沒變時沿用結果；依每幀耗時自動拉長間隔。設定頁新增「省電模式」。/ Scans only when needed; reuses results when the HUD is unchanged; adaptive interval; new power-saving mode.
 - 提示框：海克斯強化階段無法判斷時明確標示「階段無法判斷」並列出各階段效果，不猜測。/ Clear "tier unknown" label; tiers are never guessed.

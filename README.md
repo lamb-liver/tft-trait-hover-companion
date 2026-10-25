@@ -2,7 +2,9 @@
 
 [English](README.en.md) · [安裝說明](docs/install.md) · [隱私權政策](docs/privacy.md) · [更新紀錄](CHANGELOG.md)
 
-在 Twitch 直播或 YouTube 影片看聯盟戰棋（TFT）時，把滑鼠移到播放器畫面上的羈絆或海克斯強化圖示，就會顯示繁體中文名稱與遊戲內的公開敘述。
+看聯盟戰棋（TFT）實況時，常常忘記羈絆和海克斯強化的效果嗎？在 Twitch 直播或 YouTube 影片上，把滑鼠移到播放器畫面的羈絆或海克斯強化圖示，就會顯示繁體中文名稱與遊戲內的效果說明。
+
+作者：羊肝（[lambliver.dev](https://lambliver.dev)）
 
 - 0.4.0 起只要安裝 Chrome 擴充功能，**不用另外安裝 Python 或其他程式**。
 - 辨識全部在你的瀏覽器裡執行，畫面不會上傳，也不收集任何資料。
@@ -14,7 +16,7 @@
 
 **搶先測試（手動載入，Mac／Windows 桌面版 Chrome）**：
 
-1. 到 [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases) 下載 `tft-trait-hover-0.4.2.zip`。
+1. 到 [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases) 下載 `tft-trait-hover-0.4.3.zip`。
 2. 解壓縮到一個固定的資料夾（之後不要刪除或搬移）。
 3. Chrome 網址列輸入 `chrome://extensions`。
 4. 開啟右上角「開發人員模式」。
