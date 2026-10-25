@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4 — 2026-10-25
+- 商店簡短說明（manifest description）改為：看聯盟戰棋實況忘了羈絆或海克斯強化的效果？滑鼠移到圖示上就顯示說明。畫面只在瀏覽器內處理。/ Store summary updated.
+- 設定頁與隱私權政策用語統一為「海克斯強化」「效果說明」。比對程式與資料與 0.4.3 相同。/ Wording only; matcher and data same as 0.4.3.
+
 ## 0.4.3 — 2026-10-25
 - 羈絆欄：圖示畫得比清單中位數大的徽章（1 個單位就啟動的獨特羈絆、部分金色徽章、介面縮放較大的實況）不再漏認：羈絆比對多一個 56 px 尺寸；空列多試大 8／12 px；清單頂端或底端連續多列沒認到時，逐列往外找（最多 4 列）。門檻仍為 0.72。/ Trait list: badges whose glyph is drawn larger than the list median (1-unit unique traits, some gold badges, larger HUD scale) are no longer missed: one more trait scale (56 px), empty rows also try +8/+12 px, and the edge search walks outward row by row (up to 4). Threshold unchanged (0.72).
 - 海克斯強化：「開局新手包」(Build A Bud) 改用遊戲實際畫的鐵砧圖示（CDragon 15.20 buildabud_iii），不再誤認為「活火爐」。/ Build A Bud uses the anvil art the game draws (CDragon 15.20 buildabud_iii); no longer read as Living Forge.
