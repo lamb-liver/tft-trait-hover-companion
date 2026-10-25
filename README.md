@@ -16,7 +16,7 @@
 
 **搶先測試（手動載入，Mac／Windows 桌面版 Chrome）**：
 
-1. 到 [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases) 下載 `tft-trait-hover-0.4.3.zip`。
+1. 到 [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases) 下載 `tft-trait-hover-0.4.4.zip`。
 2. 解壓縮到一個固定的資料夾（之後不要刪除或搬移）。
 3. Chrome 網址列輸入 `chrome://extensions`。
 4. 開啟右上角「開發人員模式」。
