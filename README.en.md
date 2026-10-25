@@ -2,7 +2,9 @@
 
 [繁體中文](README.md) · [Install guide](docs/install.md) · [Privacy Policy](docs/privacy.md) · [Changelog](CHANGELOG.md)
 
-While watching Teamfight Tactics on Twitch or YouTube, hover over a trait or augment icon in the player to see its Traditional Chinese name and the public in-game description.
+Forget what a trait or augment does while watching Teamfight Tactics? On Twitch or YouTube, hover a trait or augment icon in the player to see its Traditional Chinese name and in-game effect.
+
+Author: 羊肝 (lamb liver), [lab.lambliver.dev](https://lab.lambliver.dev)
 
 - Since 0.4.0 it is a pure Chrome extension: **no Python or other program to install**.
 - All matching runs inside your browser. Frames are never uploaded and no data is collected.
