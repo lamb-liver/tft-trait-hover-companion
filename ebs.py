@@ -241,7 +241,7 @@ def match_frame(png, track=None):
 
 
 # /version answers this; the extension refuses a matcher whose protocol differs.
-APP_VERSION = "0.4.4"
+APP_VERSION = "0.4.6"
 PROTOCOL = 1
 EXTENSION_ID = re.compile(r"^[a-p]{32}$")
 

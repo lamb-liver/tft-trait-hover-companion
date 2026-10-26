@@ -16,7 +16,7 @@ Author: 羊肝 (lamb liver), [lambliver.dev](https://lambliver.dev)
 
 **Early testing (load unpacked, desktop Chrome on Mac/Windows)**:
 
-1. Download `tft-trait-hover-0.4.4.zip` from [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases).
+1. Download `tft-trait-hover-0.4.6.zip` from [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases).
 2. Unzip it into a permanent folder (don't delete or move it later).
 3. Open `chrome://extensions`.
 4. Turn on **Developer mode** (top right).
