@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.6 — 2026-10-26
+- 羈絆欄：基本搜尋只認到 1–2 個徽章時，逐列往上下找其餘的列；480p 等低解析度實況隔列漏認時，用兩個徽章距離的一半推算列距。門檻仍為 0.72，且需領先第二名 0.10。/ Trait list: with only 1-2 badges found, walk the other rows one at a time; on low-res streams that miss every other row, use half the badge gap as row pitch. Threshold unchanged.
+- 羈絆欄：放大裁切的實況（例如 1152×720、徽章較大且清單貼近左緣）不再整列被當成道具欄濾掉：徽章夠大（≥ 26/1080）時左界放寬到 33/1080。/ Zoomed streams whose larger badges sit left of the usual list bound are no longer dropped.
+- 已選海克斯強化沿用、黑邊裁切等見 0.4.5。驗證：未參與調整的 307 張 heldout 截圖羈絆召回 0.957 → 0.991，誤認 0；702 張回歸 0 張遺失。/ Held-out recall 0.957 → 0.991, 0 wrong; 702-frame regression lost 0.
+
+## 0.4.5 — 2026-10-26
+- 已選海克斯強化：畫面沒變時沿用上次讀到的名稱，現在最多沿用 10 秒（每次重新讀到同一組會重新計時），黑邊裁切範圍改變時立刻清掉，不會把舊位置的提示畫到新位置。門檻仍為 0.72／0.80。/ Selected-augment hold now expires 10 s after the last confirming read and is dropped when the letterbox crop changes. Thresholds unchanged.
+- 黑邊：畫面沒變的判斷改看裁切後的圖。比對程式與資料與 0.4.4 相同。/ Unchanged-HUD check signs the cropped picture. Matcher and data same as 0.4.4.
+
 ## 0.4.4 — 2026-10-25
 - 商店簡短說明（manifest description）改為：看聯盟戰棋實況忘了羈絆或海克斯強化的效果？滑鼠移到圖示上就顯示說明。畫面只在瀏覽器內處理。/ Store summary updated.
 - 設定頁與隱私權政策用語統一為「海克斯強化」「效果說明」。比對程式與資料與 0.4.3 相同。/ Wording only; matcher and data same as 0.4.3.
