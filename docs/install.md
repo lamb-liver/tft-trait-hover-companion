@@ -2,8 +2,8 @@
 
 ## 繁體中文
 
-### 方法一：Chrome 線上應用程式商店（審核通過後）
-0.4.6 審核中（公開項目）。通過後會在 README 附上商店連結，點「加到 Chrome」即可，之後自動更新。
+### 方法一：Chrome 線上應用程式商店
+打開 [TFT羈絆提示](https://chromewebstore.google.com/detail/dbecljlecmdjkahidjjgidepdjkifeoj)，點「加到 Chrome」即可，之後自動更新。
 
 ### 方法二：手動載入（搶先測試）
 適用 Mac 與 Windows 的桌面版 Chrome（Edge、Brave 等 Chromium 瀏覽器通常也可以）。
@@ -40,8 +40,8 @@ python3 -m venv .venv
 
 ## English
 
-### Option 1: Chrome Web Store (after review)
-0.4.6 is under review as a public listing. The store link will be added to the README after approval; it updates automatically.
+### Option 1: Chrome Web Store
+Open [TFT羈絆提示](https://chromewebstore.google.com/detail/dbecljlecmdjkahidjjgidepdjkifeoj) and click "Add to Chrome". It updates automatically.
 
 ### Option 2: Load unpacked (early testing)
 Desktop Chrome on Mac or Windows (other Chromium browsers usually work too).

@@ -12,7 +12,7 @@ Author: 羊肝 (lamb liver), [lambliver.dev](https://lambliver.dev)
 
 ## Install
 
-**Chrome Web Store**: 0.4.6 is under review as a public listing. The store link will be added here after approval; it installs in one click and updates automatically.
+**Chrome Web Store**: [TFT羈絆提示](https://chromewebstore.google.com/detail/dbecljlecmdjkahidjjgidepdjkifeoj). It installs in one click and updates automatically.
 
 **Early testing (load unpacked, desktop Chrome on Mac/Windows)**:
 
