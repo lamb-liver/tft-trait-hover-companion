@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.7 — 2026-11-04
+- 目錄：依《聯盟戰棋》18.6 官方改動更新提示數字（與私人主 repo 同步）。CommunityDragon 未跟上前，`companion.py` 暫時覆寫。
+
+
 ## 0.4.6 — 2026-10-26
 - 羈絆欄：基本搜尋只認到 1–2 個徽章時，逐列往上下找其餘的列；480p 等低解析度實況隔列漏認時，用兩個徽章距離的一半推算列距。門檻仍為 0.72，且需領先第二名 0.10。/ Trait list: with only 1-2 badges found, walk the other rows one at a time; on low-res streams that miss every other row, use half the badge gap as row pitch. Threshold unchanged.
 - 羈絆欄：放大裁切的實況（例如 1152×720、徽章較大且清單貼近左緣）不再整列被當成道具欄濾掉：徽章夠大（≥ 26/1080）時左界放寬到 33/1080。/ Zoomed streams whose larger badges sit left of the usual list bound are no longer dropped.

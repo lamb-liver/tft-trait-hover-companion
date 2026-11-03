@@ -55,7 +55,7 @@ LIVE_MAX = re.compile(r"最多/(\d+)")
 LIVE_ZEROS = re.compile(r"(?<=。)\s*0(?:\s+0)+")
 BODY = re.compile(r"^\(\d+\)\s*")
 # Bump this when a published sentence changes, so a stale file is refetched.
-CATALOG_VERSION = 7
+CATALOG_VERSION = 8
 STAT_LABEL = {
     "scaleAD": "物攻",
     "scaleAP": "魔攻",
@@ -107,8 +107,33 @@ PUBLIC_NULL = {
     "TFT_Augment_DeadlierCaps": {"AP": 1},
     "TFT_Augment_TragicalBlade": {"AD": 0.01},
 }
+# Official 18.6 (2026-11-04). CommunityDragon latest still had 18.5 numbers after
+# the 16.22.1 client bump. Delete when cdragon effects match these values.
+# https://teamfighttactics.leagueoflegends.com/en-us/news/game-updates/teamfight-tactics-patch-18-6/
+PATCH_18_6_TRAIT_EFFECTS = {
+    "DA_18_Blossom": {
+        7: {"ADAP": 0.55},
+        9: {"ADAP": 0.65},
+    },
+    "DA_18_Elderwood": {
+        # Plants gain Max Health per Elderwood star level: 25% -> 10%.
+        3: {"{0f90e7a4}": 0.10},
+        5: {"{0f90e7a4}": 0.10},
+        7: {"{0f90e7a4}": 0.10},
+        9: {"{0f90e7a4}": 0.10},
+        11: {"{0f90e7a4}": 0.10},
+    },
+}
+PATCH_18_6_AUGMENT_EFFECTS = {
+    "DA_ClockworkAccelerator": {"AttackSpeed": 0.12},
+    "DA_PlotArmor": {"ArmorInstant": 10.0},
+    "DA_ShoppingSpree": {"GoldGain": 7.0},
+    "DA_18_FaeTraitAugment": {"BonusMultiplier": 0.35},
+}
 # The four blessings are a live pick, not a sentence in cdragon. MetaTFT and
 # Blitz zh-TW agree. ponytail: delete when cdragon includes the blurbs.
+# Elderwood: cdragon omits the per-star plant line; Blitz zh-TW has it. 18.6 cut
+# the Max Health bonus 25% -> 10%.
 PUBLIC_LINES = {
     "DA_Primal18": [
         "在四大野性祝福中選擇一項。",
@@ -118,6 +143,15 @@ PUBLIC_LINES = {
         "我方隊伍每4秒回復最大生命的4%。",
         "(2) 選擇一項祝福。",
         "(4) 選擇第二項祝福。",
+    ],
+    "DA_18_Elderwood": [
+        "獲得可放置的神木精靈植物。",
+        "每提升1神木精靈星等，植物增加10%最大生命和10%魔攻。",
+        "(3)一棵石皮樹和一株生命花",
+        "(5)第二棵石皮樹，且石皮樹增加200生命",
+        "(7)以及深林保護者",
+        "(9)植物升至2星",
+        "(11)植物升至3星，整座森林醒了過來",
     ],
 }
 
@@ -219,7 +253,29 @@ def numeric_effects(item):
     }
     for key, value in PUBLIC_NULL.get(item.get("apiName"), {}).items():
         effects.setdefault(key, value)
+    for key, value in PATCH_18_6_AUGMENT_EFFECTS.get(item.get("apiName"), {}).items():
+        effects[key] = value
+        hashed = fnv1a(key)
+        for existing in list(effects):
+            if existing.strip("{}").lower() == hashed:
+                effects[existing] = value
     return effects
+
+
+def apply_patch_18_6_trait(trait):
+    overrides = PATCH_18_6_TRAIT_EFFECTS.get(trait.get("apiName"))
+    if not overrides:
+        return trait
+    patched = dict(trait)
+    effects = []
+    for effect in trait.get("effects") or []:
+        row = dict(effect)
+        variables = dict(row.get("variables") or {})
+        variables.update(overrides.get(row.get("minUnits"), {}))
+        row["variables"] = variables
+        effects.append(row)
+    patched["effects"] = effects
+    return patched
 
 
 def resolved_sentences(line):
@@ -267,6 +323,7 @@ def guard_mapped(traits, augments):
 
 
 def describe(trait):
+    trait = apply_patch_18_6_trait(trait)
     effects = trait.get("effects") or [{"minUnits": "", "variables": {}}]
     rows = ROW.findall(trait["desc"])
     preamble = ROW.sub("", trait["desc"])
