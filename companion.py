@@ -135,6 +135,16 @@ PATCH_18_6_AUGMENT_EFFECTS = {
 # Elderwood: cdragon omits the per-star plant line; Blitz zh-TW has it. 18.6 cut
 # the Max Health bonus 25% -> 10%.
 PUBLIC_LINES = {
+    # cdragon zh_TW has 候 for 後 on Blossom (7); lock the public lines.
+    "DA_18_Blossom": [
+        "戰鬥結束後，你的神火獲得強化。",
+        "盛放繁花英雄增加物攻、魔攻與10%最大生命。",
+        "(3)神火會升級，12% 物攻 魔攻",
+        "(5)每間商店都會有神火，30% 物攻 魔攻",
+        "(7)購買神火後獲得4金錢，55% 物攻 魔攻",
+        "(9)每回合你可以購買2神火，65% 物攻 魔攻",
+        "(11)神火充溢力量，100% 物攻 魔攻",
+    ],
     "DA_Primal18": [
         "在四大野性祝福中選擇一項。",
         "野性傷害將處決生命低於12%的敵軍。",
