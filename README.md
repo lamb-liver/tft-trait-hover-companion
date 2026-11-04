@@ -12,11 +12,11 @@
 
 ## 安裝
 
-**Chrome 線上應用程式商店**：[TFT羈絆提示](https://chromewebstore.google.com/detail/dbecljlecmdjkahidjjgidepdjkifeoj)，一鍵安裝並自動更新。
+**Chrome 線上應用程式商店**：[TFT羈絆提示](https://chromewebstore.google.com/detail/dbecljlecmdjkahidjjgidepdjkifeoj)，一鍵安裝並自動更新。目前商店上是 0.4.6，0.4.7（TFT 18.6 數值）已送審。
 
 **搶先測試（手動載入，Mac／Windows 桌面版 Chrome）**：
 
-1. 到 [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases) 下載 `tft-trait-hover-0.4.6.zip`。
+1. 到 [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases) 下載 `tft-trait-hover-0.4.7.zip`。
 2. 解壓縮到一個固定的資料夾（之後不要刪除或搬移）。
 3. Chrome 網址列輸入 `chrome://extensions`。
 4. 開啟右上角「開發人員模式」。

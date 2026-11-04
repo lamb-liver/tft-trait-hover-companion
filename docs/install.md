@@ -8,7 +8,7 @@
 ### 方法二：手動載入（搶先測試）
 適用 Mac 與 Windows 的桌面版 Chrome（Edge、Brave 等 Chromium 瀏覽器通常也可以）。
 
-1. 從 [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases) 下載 `tft-trait-hover-0.4.6.zip`。
+1. 從 [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases) 下載 `tft-trait-hover-0.4.7.zip`。
 2. 解壓縮：
    - **Mac**：在 Finder 雙擊 zip，把產生的資料夾移到固定位置，例如「文件」。
    - **Windows**：在檔案總管對 zip 按右鍵 →「全部解壓縮」，選固定位置，例如「文件」。
@@ -46,7 +46,7 @@ Open [TFT羈絆提示](https://chromewebstore.google.com/detail/dbecljlecmdjkahi
 ### Option 2: Load unpacked (early testing)
 Desktop Chrome on Mac or Windows (other Chromium browsers usually work too).
 
-1. Download `tft-trait-hover-0.4.6.zip` from [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases).
+1. Download `tft-trait-hover-0.4.7.zip` from [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases).
 2. Unzip: **Mac** – double-click in Finder; **Windows** – right-click → Extract All. Keep the folder somewhere permanent.
 3. Open `chrome://extensions`.
 4. Turn on **Developer mode**.
