@@ -12,11 +12,11 @@ Author: 羊肝 (lamb liver), [lambliver.dev](https://lambliver.dev)
 
 ## Install
 
-**Chrome Web Store**: [TFT羈絆提示](https://chromewebstore.google.com/detail/dbecljlecmdjkahidjjgidepdjkifeoj). It installs in one click and updates automatically.
+**Chrome Web Store**: [TFT羈絆提示](https://chromewebstore.google.com/detail/dbecljlecmdjkahidjjgidepdjkifeoj). It installs in one click and updates automatically. The store has 0.4.6; 0.4.7 (TFT 18.6 numbers) is in review.
 
 **Early testing (load unpacked, desktop Chrome on Mac/Windows)**:
 
-1. Download `tft-trait-hover-0.4.6.zip` from [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases).
+1. Download `tft-trait-hover-0.4.7.zip` from [Releases](https://github.com/lamb-liver/tft-trait-hover-companion/releases).
 2. Unzip it into a permanent folder (don't delete or move it later).
 3. Open `chrome://extensions`.
 4. Turn on **Developer mode** (top right).
